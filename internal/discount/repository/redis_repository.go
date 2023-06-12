@@ -15,9 +15,8 @@ import (
 )
 
 const (
-	prefix          = "discounts"
-	codeUsagePrefix = "code"
-	expiration      = time.Second * 3600
+	prefix     = "discounts"
+	expiration = time.Second * 3600
 )
 
 type discountRedisRepository struct {

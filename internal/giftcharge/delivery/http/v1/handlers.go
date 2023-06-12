@@ -77,7 +77,7 @@ func (h *giftHandlers) Create() echo.HandlerFunc {
 // @Description Get giftCharge by giftCharge uuid
 // @Accept json
 // @Produce json
-// @Param gift_id path string true "gift_id"
+// @Param gift_id path int true "gift_id"
 // @Success 200 {object} models.GiftCharge
 // @Router /giftCharge/{gift_id} [get]
 func (h *giftHandlers) GetByID() echo.HandlerFunc {
@@ -111,7 +111,7 @@ func (h *giftHandlers) GetByID() echo.HandlerFunc {
 // @Description Get giftCharge list
 // @Accept json
 // @Produce json
-// @Param   isActive  query  boolean  false  "giftCharge status"  Enums(true, false)
+// @Param   isValid  query  boolean  false  "giftCharge status"  Enums(true, false)
 // @Success 200 {object} []models.GiftCharge
 // @Router /giftCharge [get]
 func (h *giftHandlers) GetList() echo.HandlerFunc {

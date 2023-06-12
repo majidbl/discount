@@ -66,7 +66,7 @@ const docTemplate = `{
                         ],
                         "type": "boolean",
                         "description": "giftCharge status",
-                        "name": "isActive",
+                        "name": "isValid",
                         "in": "query"
                     }
                 ],
@@ -119,7 +119,7 @@ const docTemplate = `{
                 "summary": "Get giftCharge by id",
                 "parameters": [
                     {
-                        "type": "string",
+                        "type": "integer",
                         "description": "gift_id",
                         "name": "gift_id",
                         "in": "path",

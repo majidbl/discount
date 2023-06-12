@@ -66,7 +66,7 @@ paths:
         - true
         - false
         in: query
-        name: isActive
+        name: isValid
         type: boolean
       produces:
       - application/json
@@ -104,7 +104,7 @@ paths:
         in: path
         name: gift_id
         required: true
-        type: string
+        type: integer
       produces:
       - application/json
       responses:

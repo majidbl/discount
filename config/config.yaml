@@ -1,7 +1,7 @@
 AppVersion: 1.0.0
 
 HTTP:
-  Port: ":6000"
+  Port: ":9000"
   Development: true
   Timeout: 15
   ReadTimeout: 5
@@ -10,7 +10,7 @@ HTTP:
   MaxConnectionAge: 5
 
 GRPC:
-  Port: ":6007"
+  Port: ":9007"
   MaxConnectionIdle: 5
   Timeout: 15
   MaxConnectionAge: 5
@@ -27,8 +27,8 @@ Nats:
   ClientID: microservice_a
 
 Metrics:
-  Port: ":6070"
-  Url: "host.docker.internal:6070"
+  Port: ":9070"
+  Url: "host.docker.internal:9070"
   ServiceName: nats_microservice
 
 Jaeger:

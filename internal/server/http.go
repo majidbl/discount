@@ -19,6 +19,7 @@ func (s *server) runHttpServer() {
 	})
 
 	s.echo.GET("/metrics", echo.WrapHandler(promhttp.Handler()))
+
 	s.mapRoutes()
 
 	go func() {
