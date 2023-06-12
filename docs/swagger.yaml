@@ -1,0 +1,164 @@
+definitions:
+  models.GiftCharge:
+    properties:
+      amount:
+        type: integer
+      code:
+        type: string
+      createdAt:
+        type: string
+      id:
+        type: integer
+      maxUsageCount:
+        type: integer
+      updatedAt:
+        type: string
+      validityPeriodEnd:
+        type: string
+      validityPeriodStart:
+        type: string
+    type: object
+  models.Report:
+    properties:
+      chargeAmount:
+        type: integer
+      createdAt:
+        type: string
+      giftCode:
+        type: string
+      id:
+        type: integer
+      mobile:
+        type: string
+      reportTime:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /discount:
+    post:
+      consumes:
+      - application/json
+      description: return usage discounts for a giftCode
+      parameters:
+      - description: gift_code
+        in: path
+        name: gift_code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      summary: Get discounts by giftCode
+      tags:
+      - Discount
+  /giftCharge:
+    get:
+      consumes:
+      - application/json
+      description: Get giftCharge list
+      parameters:
+      - description: giftCharge status
+        enum:
+        - true
+        - false
+        in: query
+        name: isActive
+        type: boolean
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.GiftCharge'
+            type: array
+      summary: Get giftCharge list information
+      tags:
+      - GiftCharge
+    post:
+      consumes:
+      - application/json
+      description: Create new giftcharge and send it
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GiftCharge'
+      summary: Create new giftcharge
+      tags:
+      - GiftCharge
+  /giftCharge/{gift_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get giftCharge by giftCharge uuid
+      parameters:
+      - description: gift_id
+        in: path
+        name: gift_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GiftCharge'
+      summary: Get giftCharge by id
+      tags:
+      - GiftCharge
+  /report/{gift_code}:
+    get:
+      consumes:
+      - application/json
+      description: return usage reports for a giftCode
+      parameters:
+      - description: gift_code
+        in: path
+        name: gift_code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Report'
+            type: array
+      summary: Get reports by giftCode
+      tags:
+      - Report
+  /report/{mobile}:
+    get:
+      consumes:
+      - application/json
+      description: return usage reports for a mobile
+      parameters:
+      - description: gift_code
+        in: path
+        name: gift_code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Report'
+            type: array
+      summary: Get reports by mobile
+      tags:
+      - Report
+swagger: "2.0"
