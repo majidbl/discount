@@ -1,4 +1,4 @@
-### Golang NATS gRPC Postgresql egiftcharge microservice example 👋
+### arvan discount microservice example 👋
 
 ### Jaeger UI:
 
@@ -18,7 +18,7 @@ http://localhost:8222/
 
 ### Swagger UI:
 
-https://localhost:6000/swagger/index.html
+https://localhost:9000/swagger/index.html
 
 ### Adminer UI:
 
